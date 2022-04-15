@@ -46,10 +46,12 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 #include "player.h"//only .h file, there is no .c file
 #include "attributeFuncs/ageGetter.h"
 #include "attributeFuncs/letterGetter.h"
 #include "attributeFuncs/classGetter.h"
+#include "attributeFuncs/nameGetter.h"
 
 void charSetter(){
     //Var init
@@ -57,12 +59,14 @@ void charSetter(){
     playerOne.playerAge = 0;//Needs to be instantiated
     playerOne.playerGender = 'i';
     playerOne.playerClass = 'i';
+    strcpy(playerOne.playerName, "Blank");
 
     //function start
     puts("* * * Starting in charSetter function * * *\n");
     printf("Starting Age in charSetter: %d\n", playerOne.playerAge);
     printf("Starting gender in charSetter: %c\n", playerOne.playerGender);
-    printf("Starting class in classSetter: %c\n\n", playerOne.playerClass);
+    printf("Starting class in classSetter: %c\n", playerOne.playerClass);
+    printf("Starting name in nameSetter: %s\n\n", playerOne.playerName);
 
     puts("* * * charSetter prompts, still in charSetter Function * * *\n");
     puts("Character Creation. . . ");
@@ -73,11 +77,12 @@ void charSetter(){
     ageGetter(&playerOne.playerAge);
     letterGetter(&playerOne.playerGender);
     classGetter(&playerOne.playerClass);
-     
+    nameGetter(&playerOne.playerName); 
+
     //summary from function
     puts("\n* * * Back in charSetter Function * * *\n");
     printf(" Returned from function, your age is: %d\n", playerOne.playerAge);
     printf(" Returned from function, your gender is: %c\n", playerOne.playerGender);
     printf(" Returned from function, your class is: %c\n", playerOne.playerClass);
-
+    printf(" Returned from function, your name is: %s\n", playerOne.playerName);
 }
