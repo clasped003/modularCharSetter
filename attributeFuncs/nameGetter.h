@@ -1,6 +1,6 @@
 #ifndef NAMEGETTER_H
 #define NAMEGETTER_H
-
-void nameGetter(char *nameVar);
+#include "../player.h"
+void nameGetter(player *playerOne);
 
 #endif

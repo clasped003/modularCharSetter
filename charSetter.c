@@ -59,8 +59,7 @@ void charSetter(){
     playerOne.playerAge = 0;//Needs to be instantiated
     playerOne.playerGender = 'i';
     playerOne.playerClass = 'i';
-    strcpy(playerOne.playerName, "Blank");
-
+    //playerOne.playerName;
     //function start
     puts("* * * Starting in charSetter function * * *\n");
     printf("Starting Age in charSetter: %d\n", playerOne.playerAge);
@@ -77,7 +76,7 @@ void charSetter(){
     ageGetter(&playerOne.playerAge);
     letterGetter(&playerOne.playerGender);
     classGetter(&playerOne.playerClass);
-    nameGetter(&playerOne.playerName); 
+    nameGetter(&playerOne); 
 
     //summary from function
     puts("\n* * * Back in charSetter Function * * *\n");

@@ -6,8 +6,7 @@
 #include "../player.h"
 
 #define MAX_BUFF 20
-
-void nameGetter(char nameVar[])
+void nameGetter(player *playerOne)
 {
     // var init
     int loopVar = 1;
@@ -23,13 +22,13 @@ void nameGetter(char nameVar[])
         puts("3. Name can't start with a space");
         puts("4. No blank names");
         puts("5. NO OFFENSIVE NAMES");
+        //printf("Your current name is: %s", nameVar);
 
         fgets(uName, MAX_BUFF, stdin);
 
-        strcpy(nameVar, uName);
+        strcpy(playerOne->playerName, uName);
         
-        //memcpy(nameVar, uName, strlen(uName) + 1);
-        printf("playerOne.PlayerName in func: %s", nameVar);
+        //printf("playerOne.PlayerName in func: %s", nameVar);
         if(strlen(uName) == 1)
         {
             puts("Need to enter a name. Try again.");
